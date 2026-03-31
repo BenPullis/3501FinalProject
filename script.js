@@ -157,7 +157,7 @@ function initCalculatorPage() {
     }
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs));
-    window.location.href = "results.html";
+    window.location.href = "calculator.html";
   });
 
   resetBtn.addEventListener("click", () => {
@@ -177,7 +177,7 @@ function initResultsPage() {
 
   const missingDataMessage = document.getElementById("missingDataMessage");
   const resultsContent = document.getElementById("resultsContent");
-  const suggestionsList = document.getElementById("suggestionsList");
+  //const suggestionsList = document.getElementById("suggestionsList");
   const tryAgainBtn = document.getElementById("tryAgainBtn");
 
   let savedInputs = null;
@@ -198,13 +198,13 @@ function initResultsPage() {
   const result = calculateFootprint(savedInputs);
   totalOutput.textContent = formatTons(result.totalTons);
 
-  const suggestions = buildSuggestions(result.details);
-  suggestionsList.innerHTML = "";
-  suggestions.forEach((text) => {
-    const li = document.createElement("li");
-    li.textContent = text;
-    suggestionsList.appendChild(li);
-  });
+  // const suggestions = buildSuggestions(result.details);
+  // suggestionsList.innerHTML = "";
+  // suggestions.forEach((text) => {
+  //   const li = document.createElement("li");
+  //   li.textContent = text;
+  //   suggestionsList.appendChild(li);
+  //});
 
   // Render category pie chart.
   const userBreakdownCtx = document.getElementById("userBreakdownChart");
