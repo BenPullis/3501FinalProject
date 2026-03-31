@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Climate Results</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title-btn" href="index.html">Calculate Your Climate Impact</a>
+  </header>
+
+  <main class="page-shell results-layout">
+    <section class="card results-card">
+      <h1>Your Climate Impact Results</h1>
+      <p class="result-total">
+        Total Estimated Annual CO<sub>2</sub> Emissions:
+        <span id="totalOutput">0.00</span> metric tons
+      </p>
+      <p class="result-note">
+        This is an educational estimate using general emission factors.
+      </p>
+
+      <div id="missingDataMessage" class="missing-data hidden">
+        No calculator data was found. Please run the calculator first.
+      </div>
+
+      <div id="resultsContent">
+        <div class="results-grid pies-row">
+          <div class="chart-card">
+            <h2>Your Category Breakdown</h2>
+            <canvas id="userBreakdownChart"></canvas>
+          </div>
+          <div class="chart-card">
+            <h2>U.S. Average Breakdown (Estimated)</h2>
+            <canvas id="usAverageBreakdownChart"></canvas>
+          </div>
+        </div>
+
+        <div class="results-grid bar-row">
+          <div class="chart-card full-width">
+            <h2>Total Emissions Comparison</h2>
+            <canvas id="comparisonChart"></canvas>
+          </div>
+        </div>
+
+        <div class="suggestions-box">
+          <h2>Suggested Improvements</h2>
+          <ul id="suggestionsList"></ul>
+        </div>
+
+        <section class="method-note">
+          <h2>Reminder</h2>
+          <ul class="method-list">
+            <li>Calculations are estimates based on general emission factors.</li>
+            <li>Values are for educational purposes.</li>
+            <li>Exact emissions vary by location and behavior.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="button-row center-row">
+        <a id="tryAgainBtn" class="btn btn-primary" href="calculator.html">Try It Again</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built by Ben Pullis for ENGL 3501 final project</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

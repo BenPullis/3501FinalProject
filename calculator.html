@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Merriweather:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title-btn" href="index.html">Calculate Your Climate Impact</a>
+  </header>
+
+  <main class="page-shell calc-layout">
+    <section class="card form-card">
+      <h1>Carbon Footprint Calculator</h1>
+      <p class="subtitle">Enter your habits below, then view your estimated yearly emissions.</p>
+
+      <form id="climate-form" novalidate>
+        <div class="grid">
+          <div class="input-group">
+            <label for="milesPerWeek">Miles Driven Per Week</label>
+            <input type="number" id="milesPerWeek" min="0" step="1" placeholder="e.g. 150" />
+          </div>
+
+          <div class="input-group">
+            <label for="flightsPerYear">Flights Per Year</label>
+            <input type="number" id="flightsPerYear" min="0" step="1" placeholder="e.g. 2" />
+          </div>
+
+          <div class="input-group">
+            <label for="dietType">Diet Type</label>
+            <select id="dietType">
+              <option value="meat-heavy">Meat-Heavy</option>
+              <option value="average" selected>Average</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="electricityBill">Monthly Electricity Bill (USD)</label>
+            <input type="number" id="electricityBill" min="0" step="0.01" placeholder="e.g. 120" />
+          </div>
+
+          <div class="input-group">
+            <label for="consumptionLevel">Consumption Level</label>
+            <select id="consumptionLevel">
+              <option value="low">Low - rarely buys new items, reuses often</option>
+              <option value="average" selected>Average - occasional purchases, average person</option>
+              <option value="high">High - frequent shopping, lots of deliveries</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="formError" class="error-message" role="alert" aria-live="polite"></p>
+
+        <div class="button-row">
+          <button type="submit" class="btn btn-primary">Calculate</button>
+          <button type="button" id="resetBtn" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built by Ben Pullis for ENGL 3501 final project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
