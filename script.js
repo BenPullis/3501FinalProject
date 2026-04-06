@@ -82,31 +82,6 @@ function calculateFootprint(inputs) {
   };
 }
 
-function buildSuggestions(details) {
-  const suggestionMap = {
-    driving:
-      "Reduce solo driving by combining errands, carpooling, biking, walking, or using transit when possible.",
-    flights: "Try reducing flights or combining trips to lower air travel emissions.",
-    diet: "Lower diet emissions by reducing beef and adding more plant-based meals each week.",
-    electricity:
-      "Cut home energy use with efficient lighting/appliances, thermostat changes, and unplugging idle electronics.",
-    consumption:
-      "Buy fewer new products, repair what you can, and avoid unnecessary purchases to reduce consumption impact.",
-  };
-
-  const ranked = Object.entries(details).sort((a, b) => b[1] - a[1]);
-  const selected = ranked.slice(0, 4).filter((entry) => entry[1] > 0);
-
-  if (selected.length === 0) {
-    return [
-      "Great start. Keep tracking your habits and look for small weekly changes that reduce travel and energy use.",
-      "Share your estimate with classmates and compare ideas for lowering emissions together.",
-    ];
-  }
-
-  return selected.map(([key]) => suggestionMap[key]);
-}
-
 // -----------------------------
 // Calculator page logic
 // -----------------------------
@@ -177,7 +152,6 @@ function initResultsPage() {
 
   const missingDataMessage = document.getElementById("missingDataMessage");
   const resultsContent = document.getElementById("resultsContent");
-  const suggestionsList = document.getElementById("suggestionsList");
   const tryAgainBtn = document.getElementById("tryAgainBtn");
 
   let savedInputs = null;
@@ -197,14 +171,6 @@ function initResultsPage() {
 
   const result = calculateFootprint(savedInputs);
   totalOutput.textContent = formatTons(result.totalTons);
-
-  const suggestions = buildSuggestions(result.details);
-  suggestionsList.innerHTML = "";
-  suggestions.forEach((text) => {
-    const li = document.createElement("li");
-    li.textContent = text;
-    suggestionsList.appendChild(li);
-  });
 
   // Render category pie chart.
   const userBreakdownCtx = document.getElementById("userBreakdownChart");

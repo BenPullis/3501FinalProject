@@ -20,6 +20,11 @@ body {
   font-family: "Source Sans 3", sans-serif;
   color: var(--text);
   background-color: var(--bg);
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   line-height: 1.5;
 }
 
@@ -122,6 +127,83 @@ h2 {
   padding-bottom: 0.6rem;
 }
 
+.home-page {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.home-page .intro-copy {
+  font-size: 1.2rem;
+}
+
+
+.home-page .site-header {
+  margin-top: clamp(3.2rem, 5vh, 7rem);
+}
+
+.home-page .page-shell {
+  min-height: 0;
+  height: 100%;
+  padding: clamp(0.7rem, 2vh, 1.5rem) 0 0.6rem;
+}
+
+.home-page .home-layout {
+  min-height: 100%;
+}
+
+.home-page .center-panel {
+  place-self: start center;
+  margin-top: 4vh;
+}
+
+.home-page .bottom-action {
+  align-self: end;
+  padding-bottom: 2.0rem;
+}
+
+.calc-page {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.calc-page .site-header {
+  margin-top: clamp(3.2rem, 5vh, 7rem);
+}
+
+.calc-page .page-shell {
+  min-height: 0;
+  height: 100%;
+  padding: clamp(0.55rem, 1.4vh, 1rem) 0 0.5rem;
+}
+
+.calc-page .calc-layout {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-page .form-card {
+  padding: 1rem;
+  transform: translateY(-2.2vh);
+}
+
+.calc-page .grid {
+  margin-top: 0.7rem;
+  gap: 0.65rem;
+}
+
+.calc-page .button-row {
+  margin-top: 0.65rem;
+}
+
+.calc-page .footer {
+  align-self: end;
+}
+
 .card {
   background: var(--panel);
   border: 1px solid var(--border);
@@ -133,6 +215,10 @@ h2 {
 .form-card,
 .results-card {
   width: min(920px, 100%);
+}
+
+.results-card {
+  margin-bottom: 1.25rem;
 }
 
 .grid {
@@ -276,9 +362,14 @@ h2 {
 
 .footer {
   text-align: center;
-  background-color:#4a6268;
+  background-color: #4a6268;
   color: white;
-  padding: 0.6rem 0 1.4rem;
+  padding: 1rem 0;
+}
+
+.footer p {
+  margin: 0;
+  line-height: 1.25;
 }
 
 .hidden {
