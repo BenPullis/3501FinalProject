@@ -24,37 +24,78 @@
 
       <form id="climate-form" novalidate>
         <div class="grid">
+
           <div class="input-group">
-            <label for="milesPerWeek">Miles Driven Per Week</label>
-            <input type="number" id="milesPerWeek" min="0" step="1" placeholder="e.g. 150" />
+            <label for="householdSize">Number of People in Household</label>
+            <input type="number" id="householdSize" min="1" step="1" />
+          </div>
+          
+          <div class="input-group">
+            <label for="milesPerWeek">Transportation: Miles Driven Per Week</label>
+            <input type="number" id="milesPerWeek" min="0" step="1" />
           </div>
 
           <div class="input-group">
-            <label for="flightsPerYear">Flights Per Year (One Way)</label>
-            <input type="number" id="flightsPerYear" min="0" step="1" placeholder="e.g. 2" />
-          </div>
-
-          <div class="input-group">
-            <label for="dietType">Diet Type</label>
-            <select id="dietType">
-              <option value="meat-heavy">Meat-Heavy</option>
-              <option value="average" selected>Average</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="vegan">Vegan</option>
+            <label for="carType">Transportation: Car Type</label>
+            <select id="carType">
+              <option value="gas" >Gas</option>
+              <option value="hybrid">Hybrid</option>
+              <option value="electric">Electric</option>
+              <option value="none">None</option>
             </select>
           </div>
 
           <div class="input-group">
-            <label for="electricityBill">Monthly Electricity Bill (USD)</label>
-            <input type="number" id="electricityBill" min="0" step="0.01" placeholder="e.g. 120" />
+            <label for="flightsPerYear">Flights: One-Way Flights Per Year</label>
+            <input type="number" id="flightsPerYear" min="0" step="1"  />
           </div>
 
           <div class="input-group">
-            <label for="consumptionLevel">Consumption Level</label>
-            <select id="consumptionLevel">
-              <option value="low">Low - rarely buys new items, reuses often</option>
-              <option value="average" selected>Average - occasional purchases, average person</option>
-              <option value="high">High - frequent shopping, lots of deliveries</option>
+            <label for="flightLength">Flights: Average Flight Length</label>
+            <select id="flightLength">
+              <option value="short">Short</option>
+              <option value="medium" >Medium</option>
+              <option value="long">Long</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="electricityBill">Home Energy: Monthly Electric Bill (USD)</label>
+            <input type="number" id="electricityBill" min="0" step="0.01" />
+          </div>
+
+          <div class="input-group">
+            <label for="gasBill">Home Energy: Monthly Gas Bill (USD)</label>
+            <input type="number" id="gasBill" min="0" step="0.01" />
+          </div>
+
+          <div class="input-group">
+            <label for="dietType">Food: Diet Type</label>
+            <select id="dietType">
+              <option value="average" >Average</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="high_meat">High Meat</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="shoppingFrequency">Consumption: Shopping Frequency</label>
+            <select id="shoppingFrequency">
+              <option value="very_little">Very Little</option>
+              <option value="occasionally" >Occasionally</option>
+              <option value="regularly">Regularly</option>
+              <option value="frequently">Frequently</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="packagesPerMonth">Consumption: Packages/Orders Per Month</label>
+            <select id="packagesPerMonth">
+              <option value="0_1">0-1</option>
+              <option value="2_5" >2-5</option>
+              <option value="6_10">6-10</option>
+              <option value="11_plus">11+</option>
             </select>
           </div>
         </div>
